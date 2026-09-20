@@ -41,7 +41,7 @@ FINAL = {
 CROP = {
     "moon-river": ((900, 1600), (0, 470, 900, 1130)),
     # Drop the empty upper sky so the two guests, the island and the water fill the banner.
-    "moon-river-hero": ((2000, 1125), (0, 470, 2000, 1125)),
+    "moon-river-hero": ((2400, 1350), (0, 564, 2400, 1350)),
 }
 
 
