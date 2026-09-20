@@ -40,6 +40,8 @@ FINAL = {
 # The dolphin frame is a tall phone video still; the site shows it in a wide card.
 CROP = {
     "moon-river": ((900, 1600), (0, 470, 900, 1130)),
+    # Drop the empty upper sky so the two guests, the island and the water fill the banner.
+    "moon-river-hero": ((2400, 1350), (0, 564, 2400, 1350)),
 }
 
 
