@@ -2,13 +2,14 @@
 
 Run from the skidaway-site repo root:
 
-    python scripts/prepare_photos.py "<boat photos folder>" "<skidaway-media web/final folder>"
+    python scripts/prepare_photos.py "<boat photos folder>" "<skidaway-media web/final folder>" "<Reel Sound Images folder>"
 
 Add --only=<name> (for example --only=moon-river) to rewrite a single image and
-leave the other seven files untouched.
+leave the other files untouched.
 
-It reads eight named source files, writes eight named files into images/, then
-checks its own work. It never modifies or deletes a source file. Any problem
+It reads seven named source files and writes seven named files into images/. The eighth,
+moon-river-hero.jpg, is the poster frame made by scripts/prepare_video.py; this script only
+checks that it exists. Then it checks its own work. It never modifies or deletes a source file. Any problem
 ends the run with a line starting "FAILED:". On success the last line is:
 
     OK: 8 images present, no metadata, all page references resolve.
@@ -30,18 +31,20 @@ BOAT = {
     "PXL_20260913_184436313.jpg": "boat-aft",
 }
 FINAL = {
-    "gallery-dolphin-profile.jpg": "moon-river",
-    "hero-sunset.jpg": "moon-river-hero",
     "hero-home.jpg": "sunset-hero",
     "gallery-boat-bow.jpg": "boat-bow",
 }
+# From Google Drive, Reel Sound/Images (the Sept 20, 2026 marsh dolphin photos).
+IMAGES = {
+    "PXL_20260920_175054633.jpg": "moon-river",
+}
+# Made by scripts/prepare_video.py, not by this script.
+EXTERNAL = ["moon-river-hero"]
 
 # Fixed crops: output name -> (required source size, crop box left/top/right/bottom).
-# The dolphin frame is a tall phone video still; the site shows it in a wide card.
 CROP = {
-    "moon-river": ((900, 1600), (0, 470, 900, 1130)),
-    # Drop the empty upper sky so the two guests, the island and the water fill the banner.
-    "moon-river-hero": ((2400, 1350), (0, 564, 2400, 1350)),
+    # Marsh dolphins: keep the marsh bank along the top and the dolphins lower right of centre.
+    "moon-river": ((4080, 3072), (898, 92, 4080, 2365)),
 }
 
 
@@ -71,14 +74,15 @@ def save(path, name):
 
 paths = [a for a in sys.argv[1:] if not a.startswith("--")]
 flags = [a for a in sys.argv[1:] if a.startswith("--")]
-if len(paths) != 2 or any(not f.startswith("--only=") for f in flags):
+if len(paths) != 3 or any(not f.startswith("--only=") for f in flags):
     sys.exit(__doc__)
 if not os.path.exists("index.html") or not os.path.exists("CNAME"):
     fail("run this from the skidaway-site repo root")
 
-boat_dir, final_dir = paths
+boat_dir, final_dir, images_dir = paths
 jobs = [(os.path.join(boat_dir, src), name) for src, name in BOAT.items()]
 jobs += [(os.path.join(final_dir, src), name) for src, name in FINAL.items()]
+jobs += [(os.path.join(images_dir, src), name) for src, name in IMAGES.items()]
 names = [name for _, name in jobs]
 
 only = [f.split("=", 1)[1] for f in flags]
@@ -95,7 +99,7 @@ os.makedirs("images", exist_ok=True)
 for path, name in todo:
     save(path, name)
 
-expected = sorted(name + ".jpg" for name in names)
+expected = sorted(name + ".jpg" for name in names + EXTERNAL)
 present = sorted(os.listdir("images"))
 if present != expected:
     fail(f"images/ should hold exactly {expected} but holds {present}")

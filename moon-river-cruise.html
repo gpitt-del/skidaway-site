@@ -34,7 +34,7 @@
 <h1>The Moon River Cruise</h1>
 <p>Delegal Creek to Moon River and back. About ninety minutes on the water, and about four thousand years of history along the way.</p>
 </div>
-<div class="hero-photo"><img src="/images/moon-river-hero.jpg" alt="Two guests looking out over the water from the bow" width="2000" height="655" style="object-position:88% 100%" fetchpriority="high"></div>
+<div class="hero-photo"><video autoplay muted loop playsinline preload="metadata" poster="/images/moon-river-hero.jpg" width="1280" height="720" style="object-position:50% 62%" aria-label="Dolphins surfacing along the marsh near Moon River"><source src="/video/moon-river-dolphins.mp4" type="video/mp4"></video></div>
 </div>
 <section><div class="wrap two">
 <div class="prose">
@@ -66,5 +66,6 @@
 <div>© 2026 Reel Sound LLC, doing business as Skidaway Charters. Savannah, GA 31411.</div>
 <nav aria-label="Footer"><a href="/faq.html">FAQ and policies</a><a href="/privacy.html">Privacy and SMS terms</a></nav>
 </div></footer>
+<script>if(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches){var v=document.querySelector(".hero-photo video");if(v){v.removeAttribute("autoplay");v.pause();}}</script>
 </body>
 </html>
