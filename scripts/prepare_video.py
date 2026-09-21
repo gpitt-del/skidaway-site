@@ -33,6 +33,9 @@ OUT_W = 1280
 MAX_CLIP_BYTES = int(2.5 * 1024 * 1024)
 MAX_POSTER_BYTES = 400 * 1024
 HDR_TRANSFERS = {"smpte2084", "arib-std-b67"}
+# Phone HDR (HLG or PQ) to ordinary SDR. Without this the picture comes out grey and washed.
+TONEMAP = ("zscale=t=linear:npl=100,format=gbrpf32le,zscale=p=bt709,"
+           "tonemap=tonemap=mobius:desat=0,zscale=t=bt709:m=bt709:r=tv")
 
 
 def fail(msg: str) -> None:
@@ -82,10 +85,16 @@ def main() -> None:
     if v is None:
         fail("no video stream in the source")
     duration = float(info["format"]["duration"])
+    hdr = v.get("color_transfer") in HDR_TRANSFERS
     print(f"source  {v.get('codec_name')} {v.get('width')}x{v.get('height')} {v.get('pix_fmt')} "
-          f"transfer={v.get('color_transfer', 'unset')} {duration:.1f}s")
-    if v.get("color_transfer") in HDR_TRANSFERS:
-        fail("the source is HDR video; it needs tone mapping, which this script does not do")
+          f"transfer={v.get('color_transfer', 'unset')} {duration:.1f}s"
+          + ("  (HDR: tone-mapping to SDR)" if hdr else ""))
+    if hdr:
+        listed = subprocess.run([ffmpeg, "-hide_banner", "-filters"], capture_output=True, text=True,
+                                check=True, timeout=120).stdout
+        missing = [f for f in ("zscale", "tonemap") if f" {f} " not in listed]
+        if missing:
+            fail(f"the source is HDR and this ffmpeg build lacks the filters needed to convert it: {missing}")
     if duration < START + LENGTH:
         fail(f"the source is only {duration:.1f}s long")
 
@@ -99,8 +108,9 @@ def main() -> None:
     for crf in (25, 28, 31):
         subprocess.run(
             [ffmpeg, "-y", "-v", "error", "-ss", str(START), "-t", str(LENGTH), "-i", str(src),
-             "-an", "-vf", f"{CROP},scale={OUT_W}:-2", "-r", "30",
-             "-c:v", "libx264", "-profile:v", "main", "-pix_fmt", "yuv420p",
+             "-an", "-vf", f"{CROP},scale={OUT_W}:-2" + (f",{TONEMAP}" if hdr else "") + ",format=yuv420p",
+             "-r", "30", "-c:v", "libx264", "-profile:v", "main", "-pix_fmt", "yuv420p",
+             "-color_primaries", "bt709", "-color_trc", "bt709", "-colorspace", "bt709",
              "-crf", str(crf), "-preset", "slow", "-movflags", "+faststart",
              "-map_metadata", "-1", "-map_chapters", "-1", str(clip)],
             check=True, timeout=3600,
