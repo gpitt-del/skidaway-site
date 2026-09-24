@@ -96,3 +96,12 @@ h2{font-size:clamp(30px,3.6vw,44px);margin-bottom:12px}
 .site-foot .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 28px;padding-top:40px;padding-bottom:40px}
 .site-foot a{color:var(--cream)}
 .site-foot nav{display:flex;flex-wrap:wrap;gap:8px 28px}
+/* Night water theme (Sept 24, 2026) */
+:root{--marsh:#132238;--marsh-deep:#0b1420;--paper:#0f1a2a;--sand:#132238;--line:rgba(241,236,223,.16);--ink:#f1ecdf;--muted:rgba(241,236,223,.72);--body:rgba(241,236,223,.84);--brass:#d1ab5f;--brass-ink:#d1ab5f}
+a:hover{color:#e2c27a}
+.btn,.btn:hover{color:#1d2a22}
+.hero-photo{background:#182a42}
+.lead .photo,.gallery div{background:#182a42}
+.card,.lead,.price{--ink:#1d2a22;--muted:#55625a;--body:#3f4a43;--brass-ink:#8a6a2a;--line:#e2dbc8;color:var(--ink)}
+.card a:hover,.lead a:hover,.price a:hover{color:#6d5220}
+.site-head{border-bottom-color:rgba(241,236,223,.12)}
