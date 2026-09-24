@@ -9,7 +9,8 @@ h1,h2,h3.serif{font-family:Fraunces,Georgia,serif;font-weight:400;line-height:1.
 @media(min-width:900px){.wrap{padding:0 40px}}
 .site-head{background:var(--marsh);border-bottom:1px solid rgba(243,239,228,.14)}
 .site-head .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 24px;padding-top:18px;padding-bottom:18px}
-.brand{font:500 24px Fraunces,Georgia,serif;color:var(--cream);text-decoration:none}
+.brand{display:block;text-decoration:none}
+.brand img{display:block;height:44px;width:auto}
 .nav{display:flex;flex-wrap:wrap;align-items:center;gap:6px 26px;font-size:15px}
 .nav a{color:var(--cream);text-decoration:none;padding:10px 0}
 .nav a.tel{color:var(--brass);font-weight:500}
