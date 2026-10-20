@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Book a Trip | Skidaway Charters</title>
+<meta name="description" content="Pick your day and your trip. We confirm by text and take the deposit by card.">
+<link rel="canonical" href="https://skidawaycharters.com/book.html">
+<meta property="og:title" content="Book a Trip | Skidaway Charters">
+<meta property="og:description" content="Pick your day and your trip. We confirm by text and take the deposit by card.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://skidawaycharters.com/book.html">
+<meta property="og:image" content="https://skidawaycharters.com/images/hero.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="/images/icon.png" type="image/png">
+<link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+<header class="site-head"><div class="wrap">
+<a class="brand" href="/"><img src="/images/logo-header.png" alt="Skidaway Charters" width="1200" height="288"></a>
+<nav class="nav" aria-label="Main">
+<a href="/#trips">Trips</a>
+<a href="/the-boat.html">The boat</a>
+<a href="/faq.html">FAQ</a>
+<a class="hbtn" href="tel:+19128006418">Call</a>
+<a class="hbtn" href="sms:+19128006418">Text</a>
+<a class="hbtn solid" href="/book.html">Book now</a>
+</nav>
+</div></header>
+<main>
+
+<section class="sand"><div class="wrap bk">
+<div class="bkl">
+<div class="eyebrow ink">Book now</div>
+<h1 class="bold">Pick a day and your time on the water.</h1>
+<p class="lead-p">That’s all it takes to hold a date. Tell us where you’d like to go, or leave it to the captain.</p>
+<label class="lbl" for="d">Day</label><input id="d" type="date" class="inp">
+<div class="small" style="margin:-4px 0 16px;display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px"><span>Need a day that isn’t available? Let us know what day and we’ll get right back to you.</span><a class="btn ghost dark" style="min-height:40px;padding:0 16px" href="sms:+19128006418?&amp;body=Hi%20Captain%2C%20I%E2%80%99m%20hoping%20to%20get%20out%20on%20%5Bday%5D.%20Can%20we%20make%20that%20work%3F">Text us the day</a></div>
+<div class="lbl">How long?</div><div class="chips" id="dur"><button data-v="1.5 hours" class="chip sel">1.5 hr</button><button data-v="a half day" class="chip">Half day</button><button data-v="a full day" class="chip">Full day</button></div>
+<div class="lbl" id="stl">Start time</div><div class="chips" id="st"><button data-v="7:00 a.m." class="chip">7:00</button><button data-v="9:00 a.m." class="chip">9:00</button><button data-v="11:00 a.m." class="chip sel">11:00</button><button data-v="1:00 p.m." class="chip">1:00</button><button data-v="3:00 p.m." class="chip">3:00</button><button data-v="sunset" class="chip">Sunset</button></div>
+<div class="lbl" id="hdl">Morning or afternoon?</div><div class="chips" id="half"><button data-v="morning" class="chip sel">Morning</button><button data-v="afternoon" class="chip">Afternoon</button></div>
+<div class="small" id="fdn" style="margin:6px 0 14px">Full days leave early. We confirm the departure time with you.</div>
+<label class="lbl" for="trip">Where to? <span class="opt">(optional)</span></label><select id="trip" class="inp"><option value="">Captain’s choice</option><option value="moon-river-cruise">The Moon River Cruise</option><option value="sunset-cruise">Sunset Cruise</option><option value="island-beach-day">Island Beach Day</option><option value="daufuskie">Daufuskie</option><option value="hilton-head">Hilton Head</option><option value="other">Something else</option></select>
+<label class="lbl" for="nm">Your name</label><input id="nm" class="inp" autocomplete="name">
+</div>
+<aside class="price">
+<div class="pt" id="sum">Pick a day</div>
+<div class="amt">$100 <span class="dep">deposit</span></div>
+<div class="tot" id="tot">$425 total</div>
+<div>Fuel, boat and captain. All included.</div>
+<a class="btn" id="send" href="sms:+19128006418">Text us this date</a>
+<a class="btn ghost dark" href="tel:+19128006418">Or call (912) 800-6418</a>
+<div class="small">We confirm by text within the day and take the $100 deposit by card. Change, cancel or modify up to 3 days before. Weather is the captain’s call and always a full refund.</div>
+</aside>
+</div></section>
+<script>
+(function(){
+var P={'1.5 hours':425,'a half day':800,'a full day':1500};
+var sp=new URLSearchParams(location.search),q=sp.get('trip');if(q){var s=document.getElementById('trip');for(var i=0;i<s.options.length;i++)if(s.options[i].value===q)s.selectedIndex=i;}var dq=sp.get('dur');if(dq){[].forEach.call(document.querySelectorAll('#dur .chip'),function(c){c.classList.toggle('sel',c.dataset.v===({half:'a half day',full:'a full day'}[dq]||'1.5 hours'))});}
+function pick(id){var g=document.getElementById(id);g.addEventListener('click',function(e){if(e.target.classList.contains('chip')){e.preventDefault();[].forEach.call(g.children,function(c){c.classList.remove('sel')});e.target.classList.add('sel');upd();}});}
+function val(id){var c=document.querySelector('#'+id+' .sel');return c?c.dataset.v:''}
+function show(id,on){var e=document.getElementById(id);if(e)e.style.display=on?'':'none'}
+function upd(){var d=document.getElementById('d').value,du=val('dur'),st=val('st'),hf=val('half'),tr=document.getElementById('trip'),tn=tr.options[tr.selectedIndex].text,nm=document.getElementById('nm').value;
+var m=du==='1.5 hours'?'short':(du==='a half day'?'half':'full');show('stl',m==='short');show('st',m==='short');show('hdl',m==='half');show('half',m==='half');show('fdn',m==='full');
+var dt=d?new Date(d+'T12:00:00').toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'}):'Pick a day';
+var when=m==='short'?st:(m==='half'?hf:'');
+document.getElementById('sum').textContent=dt+(when?' \u00b7 '+when:'')+' \u00b7 '+du;
+document.getElementById('tot').textContent='$'+(P[du]||425).toLocaleString()+' total';
+var body='Hi Captain, I\u2019d like to book '+(tr.value?tn:'a trip')+' on '+(d?dt:'[date]')+' for '+du+(m==='short'?' starting at '+st:(m==='half'?' in the '+hf:''))+'.'+(nm?' \u2014 '+nm:'');
+document.getElementById('send').href='sms:+19128006418?&body='+encodeURIComponent(body);}
+pick('dur');pick('st');pick('half');['d','trip','nm'].forEach(function(i){document.getElementById(i).addEventListener('change',upd);document.getElementById(i).addEventListener('input',upd)});upd();
+})();
+</script>
+</main>
+<footer class="site-foot"><div class="wrap">
+<div class="foot-brand"><img src="/images/logo-header.png" alt="Skidaway Charters" width="1200" height="288"><div>Sharing Lowcountry Love<br><span>...Since 1959!</span></div></div>
+<div class="foot-right">© 2026 Skidaway Charters · Savannah, GA<br><nav aria-label="Footer"><a href="/faq.html">FAQ and policies</a><a href="/privacy.html">Privacy and SMS terms</a></nav></div>
+</div></footer>
+</body>
+</html>
