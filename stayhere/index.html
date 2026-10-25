@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Make it memorable | Stay Here guests · Skidaway Charters</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:dark;--navy:#132238;--page:#0f1a2a;--deep:#0b1420;--card:#182a42;--cream:#f1ecdf;--cream-88:rgba(241,236,223,.88);--cream-84:rgba(241,236,223,.84);--cream-72:rgba(241,236,223,.72);--cream-40:rgba(241,236,223,.4);--line:rgba(241,236,223,.16);--brass:#d1ab5f;--brass-hover:#e2c27a;--ink:#1d2a22;--ink-body:#3f4a43;--ink-muted:#55625a;--field-line:#b9b19c;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{font-family:Inter,system-ui,sans-serif;background:var(--deep);color:var(--cream);font-size:16px;line-height:1.6}
+a{color:var(--brass)}a:hover{color:var(--brass-hover)}
+img{display:block;max-width:100%}
+.site-head{background:var(--navy);border-bottom:1px solid rgba(241,236,223,.12)}
+.site-head .wrap{max-width:1280px;margin:0 auto;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.site-head img{height:52px;width:auto;max-width:60vw}
+.site-head a.tel{color:var(--brass);font-weight:500;font-size:15px;text-decoration:none;padding:10px 0;white-space:nowrap}
+.col{max-width:560px;margin:0 auto;background:var(--page)}
+.hero{background:var(--navy);padding:32px 24px 30px;display:flex;flex-direction:column;gap:14px}
+.eyebrow{font-size:13px;letter-spacing:.08em;font-weight:500;text-transform:uppercase;color:var(--brass)}
+.eyebrow .co{color:var(--cream)}
+.partner{display:flex;align-items:center;gap:14px;margin:2px 0 2px}
+.partner-chip{display:inline-block;background:#e5e5e5;border-radius:8px;padding:6px 14px}
+.partner img{display:block;height:56px;width:auto}
+.partner-mark{font-family:Fraunces,Georgia,serif;font-weight:500;font-size:34px;line-height:1.1;letter-spacing:.01em}
+h1{font-family:Fraunces,Georgia,serif;font-weight:300;font-size:36px;line-height:1.1}
+.hero p{font-size:17px;color:var(--cream-88)}
+.hero p.lede{font-family:Fraunces,Georgia,serif;font-size:22px;line-height:1.3;color:var(--brass);margin-top:-4px}
+.heroimg{aspect-ratio:4/3;overflow:hidden;background:#1b2d47}
+.heroimg img{width:100%;height:100%;object-fit:cover}
+.points{padding:22px 24px 0;display:flex;flex-direction:column;gap:10px}
+.points div{display:flex;gap:12px;align-items:flex-start;font-size:15px;color:var(--cream-88)}
+.points svg{flex:0 0 18px;margin-top:5px;color:var(--brass)}
+.step{padding:28px 24px 8px;display:flex;flex-direction:column;gap:14px}
+.step.tight{padding:28px 20px 8px}
+h2{font-family:Fraunces,Georgia,serif;font-weight:400;font-size:26px;line-height:1.15}
+.step.tight h2{margin:0 4px}
+.opts{display:flex;flex-direction:column;gap:16px}
+.opt{display:block;text-decoration:none;color:var(--cream);background:var(--card);border:1px solid rgba(241,236,223,.18);border-radius:8px;overflow:hidden}
+.opt:hover{color:var(--cream);border-color:rgba(241,236,223,.4)}
+.opt .ph{aspect-ratio:16/9;overflow:hidden;background:#1b2d47}
+.opt .ph img{width:100%;height:100%;object-fit:cover}
+.opt .tx{padding:18px 18px 18px;display:flex;flex-direction:column;gap:8px}
+.opt .len{font-size:13px;letter-spacing:.06em;font-weight:600;text-transform:uppercase;color:var(--brass)}
+.opt .name{font-family:Fraunces,Georgia,serif;font-size:24px;line-height:1.2}
+.opt p{font-size:15px;line-height:1.5;color:var(--cream-84)}
+.opt .go{margin-top:6px;display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--brass)}
+.closing{padding:28px 24px 40px;font-size:15px;color:var(--cream-72)}
+.plan{display:none}
+.plan .hero{gap:10px}
+.plan .hero .what{font-family:Fraunces,Georgia,serif;font-size:22px;line-height:1.3}
+.plan .hero .what b{font-weight:500}
+.change{font-size:14px}
+.monthbar{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.monthbar .m{font-family:Fraunces,Georgia,serif;font-size:22px}
+.nav{min-width:44px;min-height:44px;border-radius:6px;border:1px solid rgba(241,236,223,.25);background:var(--card);color:var(--cream);cursor:pointer;display:inline-flex;align-items:center;justify-content:center}
+.nav:disabled{opacity:.35;cursor:default}
+.grid{display:flex;flex-wrap:wrap;margin:0 -3px}
+.dow{display:inline-flex;align-items:center;justify-content:center;width:calc(100% / 7 - 6px);margin:3px;font-size:12px;font-weight:600;letter-spacing:.06em;color:var(--cream-72)}
+.day{display:inline-flex;align-items:center;justify-content:center;width:calc(100% / 7 - 6px);margin:3px;min-height:44px;border-radius:6px;font-family:Inter,system-ui,sans-serif;font-size:15px;font-weight:500;cursor:pointer;border:1px solid rgba(241,236,223,.22);background:var(--card);color:var(--cream)}
+.day.blank{visibility:hidden}
+.day:disabled{cursor:default;border-color:transparent;background:transparent;color:var(--cream-40);text-decoration:line-through}
+.day.sel{font-weight:600;border-color:var(--brass);background:var(--brass);color:var(--ink)}
+.hint{font-size:14px;color:var(--cream-72)}
+.chips{display:flex;flex-wrap:wrap;margin:0 -4px}
+.chip{display:inline-flex;align-items:center;justify-content:center;margin:4px;min-height:46px;padding:0 18px;border-radius:999px;font-family:Inter,system-ui,sans-serif;font-size:16px;font-weight:600;cursor:pointer;border:1px solid rgba(241,236,223,.25);background:var(--card);color:var(--cream)}
+.chip.sel{border-color:var(--brass);background:var(--brass);color:var(--ink)}
+.form{background:#fff;color:var(--ink);border-radius:8px;padding:22px 20px;display:flex;flex-direction:column;gap:16px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-size:14px;font-weight:600;color:var(--ink-body)}
+.field input,.field select,.field textarea{width:100%;min-height:48px;padding:0 14px;border:1px solid var(--field-line);border-radius:6px;font-family:Inter,system-ui,sans-serif;font-size:16px;color:var(--ink);background:#fff;color-scheme:light}
+.field textarea{padding:12px 14px;resize:vertical;min-height:72px}
+.field select{padding:0 10px}
+.field input:focus,.field select:focus,.field textarea:focus{outline:2px solid var(--brass);outline-offset:1px}
+.field.err input,.field.err textarea{border-color:#b3261e}
+.errmsg{display:none;font-size:14px;color:#b3261e}
+.field.err .errmsg{display:block}
+.pick{padding:24px 20px 40px;display:flex;flex-direction:column;gap:14px}
+.summary{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:18px 20px;display:flex;flex-direction:column;gap:4px}
+.summary .when{font-family:Fraunces,Georgia,serif;font-size:22px;line-height:1.25}
+.summary .what{color:var(--cream-84)}
+.btn{display:flex;align-items:center;justify-content:center;min-height:54px;background:var(--brass);color:var(--ink);border:0;border-radius:4px;font-family:Inter,system-ui,sans-serif;font-weight:600;font-size:17px;text-decoration:none;cursor:pointer;width:100%}
+.btn:hover{background:var(--brass-hover);color:var(--ink)}
+.btn.ghost{background:transparent;color:var(--cream);border:1px solid rgba(241,236,223,.35);min-height:48px;font-size:16px}
+.btn.ghost:hover{background:rgba(241,236,223,.06);color:var(--cream)}
+.done{display:none}
+.done .hero{padding:36px 24px 40px;gap:16px}
+.done h1{font-size:40px}
+.check{width:56px;height:56px;border-radius:999px;background:var(--brass);color:var(--ink);display:flex;align-items:center;justify-content:center}
+.pad{padding:24px 20px 8px}
+.card{background:#fff;color:var(--ink);border-radius:8px;padding:22px 20px;display:flex;flex-direction:column;gap:14px}
+.kv{display:flex;flex-direction:column;gap:2px}
+.kv .k{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-muted)}
+.kv .big{font-family:Fraunces,Georgia,serif;font-size:24px;line-height:1.25}
+.kv .v{font-weight:600}
+.kv .sub{color:var(--ink-body)}
+.actions{padding:28px 20px 40px;display:flex;flex-direction:column;gap:12px}
+.site-foot{background:var(--deep);border-top:1px solid rgba(241,236,223,.12);color:rgba(241,236,223,.78);font-size:14px}
+.site-foot .wrap{max-width:560px;margin:0 auto;padding:28px 24px;display:flex;flex-direction:column;gap:10px}
+.foot-brand{display:flex;align-items:center;gap:16px;color:var(--cream);font-family:Fraunces,Georgia,serif;font-size:19px;line-height:1.2}
+.foot-brand img{width:auto;height:48px}
+.foot-brand span{color:var(--brass)}
+.site-foot a{color:var(--cream)}
+</style>
+</head>
+<body>
+<header class="site-head"><div class="wrap">
+<a class="brand" href="/"><img src="/images/logo-header.png" alt="Skidaway Charters" width="1200" height="288"></a>
+<a class="tel" href="tel:+19128006418">(912) 800-6418</a>
+</div></header>
+
+<!-- Page 1: choose -->
+<main class="col" id="choose">
+<section class="hero" aria-labelledby="h">
+<div class="eyebrow">Exclusively for <span class="co">Stay Here</span> guests</div>
+<div class="partner"><span class="partner-chip"><img src="/images/stayhere-logo.png" alt="Stay Here" width="400" height="148" onerror="this.parentNode.outerHTML='<div class=&quot;partner-mark&quot;>Stay Here</div>'"></span></div>
+<h1 id="h">Make it memorable.</h1>
+<p class="lede">An experience you won’t forget.</p>
+<p>A private boat and a U.S. Coast Guard licensed captain, pointed at the islands’ empty beaches, dockside lunches, cocktails and golf carts. A Bahamian stay, right here in the Lowcountry.</p>
+</section>
+<div class="heroimg"><img src="/images/hero.jpg" alt="The boat anchored off an empty barrier island beach near Savannah" width="2000" height="1500"></div>
+<div class="points">
+<div><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Your own boat, your own pace, your own trip… your way.</span></div>
+<div><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Dolphins, pelicans and shorebirds are regulars.</span></div>
+<div><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Islands and beaches no road reaches.</span></div>
+<div><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Bring the cooler for cocktails and snacks; there’s a serving table and a private head (for those little emergencies).</span></div>
+</div>
+
+<section class="step" aria-labelledby="s1">
+<h2 id="s1">Which kind of day, half or full?</h2>
+<p class="hint" style="margin-top:-4px">Below are starting points, not scripts.</p>
+<div class="opts">
+<a class="opt" href="#half">
+<div class="ph"><img src="/images/boat-side.jpg" alt="The boat beside a barrier island beach" width="2000" height="1500" loading="lazy"></div>
+<div class="tx"><div class="len">Half day · about 4 hours</div><div class="name">Islands and Empty Beaches</div>
+<p>Barrier islands with miles of sand and not a soul around. Dolphins often alongside, shorebirds and pelicans working nearby, and a beach to yourselves. Spend the hours how you like: soak up the sun, bring the cocktails and a beach cookout, or walk the trails and look for the wildlife that lives out there. The right half day for a girls’ weekend, or just to take in what Savannah and the Lowcountry have to offer.</p>
+<div class="go">Plan a half day <span aria-hidden="true">→</span></div></div>
+</a>
+<a class="opt" href="#full">
+<div class="ph"><img src="/images/dock-lights-wide.jpg" alt="The boat at the dock at dusk, underwater lights on" width="2000" height="1506" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+<div class="tx"><div class="len">A full day of adventure</div><div class="name">Downtown and Daufuskie</div>
+<p>From the bars, restaurants and nightlife of Savannah, step into a place like no other. Daufuskie Island, reachable only by boat, is our local Bahamian hideaway: golf carts are the way around, Pat Conroy taught school here and came away with The Water Is Wide, and there’s a full lineup of restaurants, cocktails and even a distillery. Savannah’s waterfront from the river on the way, and something for everyone in a jam-packed full day.</p>
+<div class="go">Plan a full day <span aria-hidden="true">→</span></div></div>
+</a>
+<a class="opt" href="#custom">
+<div class="ph"><img src="/images/dock-lights-purple.jpg" alt="The boat at dusk with purple underwater lights" width="2000" height="1506" loading="lazy" onerror="this.parentNode.style.display='none'"></div>
+<div class="tx"><div class="len">Something else</div><div class="name">Build your own</div>
+<p>Spend your time how you want; the captain helps build it. A sunset cruise. Shark-tooth hunting on Shark Tooth Island, where megalodon teeth have turned up. A Hilton Head run with lunch dockside at Harbour Town. Backwater marsh and Lowcountry nature tours. Tell him what you have in mind.</p>
+<div class="go">Tell the captain <span aria-hidden="true">→</span></div></div>
+</a>
+</div>
+</section>
+<p class="closing">Rather talk it through? <a href="sms:+19128006418">Text</a> or <a href="tel:+19128006418">call (912) 800-6418</a>. A real person answers after you prove you’re not a telemarketer.</p>
+</main>
+
+<!-- Page 2: plan -->
+<main class="col plan" id="plan">
+<section class="hero">
+<div class="eyebrow">Exclusively for <span class="co">Stay Here</span> guests</div>
+<h1 id="p-title"></h1>
+<div class="what" id="p-what"></div>
+<p id="p-text"></p>
+<p class="hint">At least $100 down secures your trip. The rest can be settled any time.</p>
+<a class="change" href="#">Change your pick</a>
+</section>
+
+<section class="step" id="sched">
+<h2>1. Pick a date</h2>
+<div class="monthbar">
+<button type="button" class="nav" id="prev" aria-label="Previous month"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
+<div class="m" id="month"></div>
+<button type="button" class="nav" id="next" aria-label="Next month"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+</div>
+<div class="grid" aria-hidden="true"><div class="dow">SU</div><div class="dow">MO</div><div class="dow">TU</div><div class="dow">WE</div><div class="dow">TH</div><div class="dow">FR</div><div class="dow">SA</div></div>
+<div class="grid" id="days" role="group" aria-label="Days"></div>
+<p class="hint">Grey days are not available.</p>
+<div id="timestep">
+<h2 style="margin-top:14px">2. Pick a time</h2>
+<div class="chips" id="slots"></div>
+<div id="startwrap" style="display:none"><div class="hint" style="margin-top:6px">Start time</div><div class="chips" id="starts"></div></div>
+</div>
+</section>
+
+<section class="step tight">
+<h2 id="who-h">3. Who’s coming</h2>
+<div class="form">
+<div class="field" id="f-wish" style="display:none"><label for="wish">What do you have in mind?</label><textarea id="wish" rows="3" placeholder="The day, roughly how long, how many of you, where you’re staying"></textarea><div class="errmsg">Tell the captain a little about the day.</div></div>
+<div class="field" id="f-guests"><label for="guests">Your names</label><input id="guests" type="text" autocomplete="off" placeholder="First and last names"><div class="errmsg">Please add your names.</div></div>
+<div class="field" id="f-mobile"><label for="mobile">Mobile number</label><input id="mobile" type="tel" autocomplete="tel" inputmode="tel"><div class="errmsg">Please add a mobile number so the captain can text you.</div></div>
+<div class="field"><label for="email">Email (optional)</label><input id="email" type="email" autocomplete="email"></div>
+<div class="field" id="f-party"><label for="party">How many</label><input id="party" type="number" inputmode="numeric" min="1" step="1" autocomplete="off"><div class="errmsg">How many are coming?</div></div>
+<div class="field" id="f-notes"><label for="notes">Anything the captain should know (optional)</label><textarea id="notes" rows="2" placeholder="A birthday, kids’ ages, anything else"></textarea></div>
+</div>
+</section>
+
+<section class="pick">
+<div class="summary">
+<div class="eyebrow">Your pick</div>
+<div class="when" id="summary"></div>
+<div class="what" id="what"></div>
+</div>
+<button type="button" class="btn" id="book">Book this day</button>
+<p class="hint" id="pickhint" style="display:none">Pick a date and a time first.</p>
+</section>
+</main>
+
+<!-- Done -->
+<main class="col done" id="done">
+<section class="hero">
+<div class="check"><svg role="img" aria-label="Request sent" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+<h1>Your request is in.</h1>
+<p>Your email should have opened with the details filled in; just hit Send. Captain Gabe confirms by text the same day, with where to meet the boat and what to bring.</p>
+</section>
+<div class="pad">
+<div class="card" style="gap:16px">
+<div class="kv"><div class="k">When</div><div class="big" id="d-when"></div><div class="sub" id="d-what"></div></div>
+<div class="kv"><div class="k">Who</div><div class="v" id="d-guests"></div><div class="sub" id="d-contact"></div></div>
+</div>
+</div>
+<div class="actions">
+<a class="btn ghost" id="textit" href="#">Email didn’t open? Text the details instead</a>
+<a class="btn ghost" id="again" href="#">Back to the start</a>
+</div>
+</main>
+
+<footer class="site-foot"><div class="wrap">
+<div class="foot-brand"><img src="/images/logo-header.png" alt="Skidaway Charters" width="1200" height="288"><div>Sharing Lowcountry Love<br><span>...Since 1959!</span></div></div>
+<div>© 2026 Skidaway Charters · Savannah, GA</div>
+<div><a href="tel:+19128006418">(912) 800-6418</a> · <a href="mailto:captain@skidawaycharters.com">captain@skidawaycharters.com</a></div>
+</div></footer>
+
+<script>
+(function(){
+var EMAIL='captain@skidawaycharters.com', SMS='+19128006418', PARTNER='Stay Here';
+var MAX_DAYS=180, LEAD_DAYS=1;
+var EXTRA_CLOSED={'2026-10-27':1};
+var TRIPS={
+ half:{title:'Your half day on the water', name:'Islands and Empty Beaches', len:'half day, about 4 hours', price:'$750', priceLine:'Half day, about 4 hours · <b>$750</b> for Stay Here guests',
+  text:'Beaches, dolphins and the barrier islands, spent your way. Pick a morning or an afternoon.',
+  slots:['Morning','Afternoon']},
+ full:{title:'Your Downtown and Daufuskie day', name:'Downtown and Daufuskie', len:'a full day of adventure', price:'$1,350', priceLine:'A full day of adventure · <b>$1,350</b> for Stay Here guests',
+  text:'Downtown Savannah and River Street from the river, not the street, then Daufuskie with golf carts and cocktails, and a cruise through the meandering marsh of the Lowcountry.',
+  slots:[]},
+ custom:{title:'Build your own day', name:'Something else', len:'', price:'', priceLine:'Tell the captain what you have in mind and he’ll text you back with a plan and a price.',
+  text:'A sunset cruise, shark-tooth hunting, Hilton Head and Harbour Town, a backwater nature tour. Pick a date if you have one in mind.',
+  slots:['Morning, 4 hours','Afternoon, 4 hours','Sunset, 2 hours','Not sure yet (1.5-hour minimum)'], starts:{'Not sure yet (1.5-hour minimum)':['7:00 a.m.','9:00 a.m.','11:00 a.m.','1:00 p.m.','3:00 p.m.']}}
+};
+var DOW=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+var MON=['January','February','March','April','May','June','July','August','September','October','November','December'];
+var today=new Date(); today.setHours(0,0,0,0);
+var first=new Date(today); first.setDate(first.getDate()+LEAD_DAYS);
+var last=new Date(today); last.setDate(last.getDate()+MAX_DAYS);
+var view=new Date(first.getFullYear(),first.getMonth(),1);
+var tripId=null, trip=null, sel=null, slot=null, start=null;
+var el=function(id){return document.getElementById(id);};
+
+function key(d){return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');}
+function nthWeekday(y,m,dow,n){var d=new Date(y,m,1);var off=(dow-d.getDay()+7)%7;return 1+off+(n-1)*7;}
+function holiday(d){
+  var y=d.getFullYear(),m=d.getMonth(),n=d.getDate();
+  if(m===0&&n===1)return true;
+  if(m===6&&n===4)return true;
+  if(m===11&&(n===24||n===25))return true;
+  if(m===10){var tg=nthWeekday(y,10,4,4);if(n===tg||n===tg+1)return true;}
+  if(m===4){var lastMon=new Date(y,5,0);while(lastMon.getDay()!==1)lastMon.setDate(lastMon.getDate()-1);if(n===lastMon.getDate())return true;}
+  if(m===8&&n===nthWeekday(y,8,1,1))return true;
+  return false;
+}
+function closed(d){
+  if(d<first||d>last)return true;
+  var w=d.getDay();
+  if(w===1||w===5)return true;
+  if(w===4){var n=d.getDate();var t1=nthWeekday(d.getFullYear(),d.getMonth(),4,1);if(n===t1||n===t1+14)return true;}
+  if(holiday(d))return true;
+  if(EXTRA_CLOSED[key(d)])return true;
+  return false;
+}
+function renderCal(){
+  var y=view.getFullYear(),m=view.getMonth();
+  el('month').textContent=MON[m]+' '+y;
+  var g=el('days'); g.innerHTML='';
+  var lead=new Date(y,m,1).getDay();
+  for(var i=0;i<lead;i++){var b=document.createElement('div');b.className='day blank';g.appendChild(b);}
+  var dim=new Date(y,m+1,0).getDate();
+  for(var n=1;n<=dim;n++){
+    var d=new Date(y,m,n), btn=document.createElement('button');
+    btn.type='button'; btn.className='day'; btn.textContent=n;
+    btn.setAttribute('aria-label',DOW[d.getDay()]+', '+MON[m]+' '+n);
+    if(closed(d)){btn.disabled=true;}
+    else{btn.addEventListener('click',(function(dd){return function(){sel=dd;renderCal();renderSummary();};})(d));}
+    if(sel&&key(sel)===key(d))btn.classList.add('sel');
+    g.appendChild(btn);
+  }
+  el('prev').disabled=(y<first.getFullYear()||(y===first.getFullYear()&&m<=first.getMonth()));
+  el('next').disabled=(y>last.getFullYear()||(y===last.getFullYear()&&m>=last.getMonth()));
+}
+function renderSlots(){
+  var c=el('slots'); c.innerHTML='';
+  if(!trip)return;
+  el('timestep').style.display=trip.slots.length?'':'none';
+  trip.slots.forEach(function(s){var b=document.createElement('button');b.type='button';b.className='chip'+(s===slot?' sel':'');b.textContent=s;b.addEventListener('click',function(){slot=s;start=null;renderSlots();renderSummary();});c.appendChild(b);});
+  var list=(trip.starts&&slot&&trip.starts[slot])||[];
+  var w=el('startwrap'), sc=el('starts'); sc.innerHTML=''; w.style.display=list.length?'':'none';
+  list.forEach(function(t){var b=document.createElement('button');b.type='button';b.className='chip'+(t===start?' sel':'');b.textContent=t;b.addEventListener('click',function(){start=t;renderSlots();renderSummary();});sc.appendChild(b);});
+}
+function whenText(){var t=slot?(slot+(start?', from '+start:'')):'';return sel?DOW[sel.getDay()]+', '+MON[sel.getMonth()]+' '+sel.getDate()+(t?' · '+t:''):t;}
+function whatText(){if(!trip)return '';return tripId==='custom'?'Something else, priced by the captain':trip.name+' · '+trip.len+' · '+trip.price;}
+function renderSummary(){
+  var s=el('summary');
+  var needsTime=trip&&trip.slots.length>0&&tripId!=='custom';
+  if(tripId==='custom'){s.textContent=whenText()||'Any date and time you like.';}
+  else if(sel&&(slot||!needsTime))s.textContent=whenText();
+  else if(sel)s.textContent=whenText()+' · pick a time';
+  else s.textContent=needsTime?'Pick a date and a time above.':'Pick a date above.';
+  el('what').textContent=whatText();
+}
+function val(id){return (el(id).value||'').trim();}
+function body(){
+  var l=[PARTNER+' guest request','Trip: '+whatText(),'When: '+(whenText()||'open'),'Guests: '+val('guests'),'Mobile: '+val('mobile'),'Email: '+(val('email')||'none given'),'Aboard: '+val('party'),'Notes: '+(val('notes')||'none')];
+  if(tripId==='custom')l.splice(2,0,'In mind: '+val('wish'));
+  l.push('Referred by: '+PARTNER,'','Sent from the '+PARTNER+' booking page');
+  return l.join('\n');
+}
+function shortWhen(){return sel?DOW[sel.getDay()].slice(0,3)+' '+MON[sel.getMonth()].slice(0,3)+' '+sel.getDate()+(slot?', '+slot:''):(slot||'open date');}
+
+function show(id){['choose','plan','done'].forEach(function(p){el(p).style.display=p===id?'block':'none';});window.scrollTo(0,0);}
+function openPlan(id){
+  tripId=id; trip=TRIPS[id]; sel=null; slot=null; start=null;
+  el('p-title').textContent=trip.title; el('p-what').innerHTML=trip.priceLine; el('p-text').textContent=trip.text;
+  var custom=id==='custom';
+  el('f-wish').style.display=custom?'':'none';
+  el('f-notes').style.display=custom?'none':'';
+  el('who-h').textContent=custom?'3. Tell the captain':(trip.slots.length?'3. Who’s coming':'2. Who’s coming');
+  el('book').textContent=custom?'Send it to the captain':'Book this day';
+  renderCal(); renderSlots(); renderSummary(); show('plan');
+}
+function route(){
+  var h=(location.hash||'').replace('#','');
+  if(h==='half'||h==='full'||h==='custom')openPlan(h); else show('choose');
+}
+window.addEventListener('hashchange',route);
+window.addEventListener('popstate',route);
+document.querySelectorAll('a.opt').forEach(function(a){a.addEventListener('click',function(ev){ev.preventDefault();var id=a.getAttribute('href').replace('#','');try{history.pushState(null,'','#'+id);}catch(e){}openPlan(id);});});
+document.querySelector('a.change').addEventListener('click',function(ev){ev.preventDefault();try{history.pushState(null,'',location.pathname);}catch(e){}show('choose');});
+el('prev').addEventListener('click',function(){view=new Date(view.getFullYear(),view.getMonth()-1,1);renderCal();});
+el('next').addEventListener('click',function(){view=new Date(view.getFullYear(),view.getMonth()+1,1);renderCal();});
+el('book').addEventListener('click',function(){
+  var ok=true, custom=tripId==='custom';
+  var need=custom?['wish','guests','mobile','party']:['guests','mobile','party'];
+  need.forEach(function(id){var f=el('f-'+id);if(!val(id)){f.classList.add('err');ok=false;}else f.classList.remove('err');});
+  var ph=el('pickhint');
+  var needsTime=trip.slots.length>0;
+  if(!custom&&(!sel||(needsTime&&!slot))){ph.style.display='block';ph.textContent=needsTime?'Pick a date and a time first.':'Pick a date first.';ok=false;}else ph.style.display='none';
+  if(!ok){var e=document.querySelector('.field.err, #pickhint[style*="block"]');if(e)e.scrollIntoView({behavior:'smooth',block:'center'});return;}
+  var subject=PARTNER+' guest request: '+(custom?'something else':trip.name)+', '+shortWhen();
+  var mail='mailto:'+EMAIL+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body());
+  el('d-when').textContent=whenText()||'Date to be set';
+  el('d-what').textContent=whatText();
+  el('d-guests').textContent=val('guests');
+  el('d-contact').textContent=val('mobile')+' · '+val('party')+' aboard';
+  el('textit').href='sms:'+SMS+'?&body='+encodeURIComponent(body());
+  show('done');
+  window.location.href=mail;
+});
+el('again').addEventListener('click',function(ev){ev.preventDefault();history.replaceState(null,'',location.pathname);show('choose');});
+route();
+})();
+</script>
+</body>
+</html>
